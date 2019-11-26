@@ -6,18 +6,15 @@ public class WitzeListe {
 
     private List<Witz> liste;
 
-    public WitzeListe() {
+    public WitzeListe(List<Witz> witze) {
         this.liste = new ArrayList<Witz>();
-    }
-
-    public void add(Witz witz) {
-        this.liste.add(witz);
+        this.liste.addAll(witze);
     }
 
     public Witz getWitz() {
-
-        int randomIndex = 0; // I used a dice
-        return liste.get(0);
+        Random generator = new Random();
+        int randomIndex = generator.nextInt(liste.size());
+        return liste.get(randomIndex);
     }
 
 }

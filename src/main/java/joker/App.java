@@ -3,10 +3,15 @@
  */
 package joker;
 
+import java.util.Arrays;
+
 public class App {
     public static Joker getJoker() {
-        WitzeListe liste = new WitzeListe();
-        liste.add(new Witz("demo 1"));
+        WitzeListe liste = new WitzeListe(Arrays.asList(
+            new Witz("demo 1"), 
+            new Witz("demo 2"),
+            new Witz("demo 3"))
+        );
 
         ConsoleAusgabe ausgabe = new ConsoleAusgabe();
         return new Joker(liste, ausgabe);
