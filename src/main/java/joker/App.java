@@ -4,11 +4,16 @@
 package joker;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
+    public static Joker getJoker() {
+        WitzeListe liste = new WitzeListe();
+        liste.add(new Witz("demo 1"));
+
+        ConsoleAusgabe ausgabe = new ConsoleAusgabe();
+        return new Joker(liste, ausgabe);
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Joker joker = getJoker();
+        joker.tellJoke();
     }
 }
